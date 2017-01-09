@@ -129,3 +129,14 @@ var detailpear = {
     nama: "Pear",
     warna: "Hijau"
 }
+
+var apl = new Apple(detailAple)
+console.log(`The tree is alive! :smile:`)
+do {
+    apl.getAppleGrow();
+    apl.getProduceApple();
+    console.log(`[Umur Pohon Tahun Ke-${apl.age} Report] Tinggi = ${apl.height.toFixed(2)} Meter || ${apl.getApple()} = ${apl.fruits}`);
+} while (apl.status != false)
+console.log(`Pohon Berhenti Tumbuh Saat Berumur : ${apl.max_umur}`);
+console.log(`Pohon Pertama Berbuah Saat Berumur : ${apl.first_buah}`);
+console.log(`The tree has met its end. :sad:\n`);
