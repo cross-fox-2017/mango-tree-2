@@ -101,3 +101,18 @@ class Mango extends MangoTree {
         super.produceMango();
     }
 }
+
+class Pear extends PearTree {
+    constructor(params) {
+        super(params)
+    }
+    getPear() {
+        return `Hasil Buah "${this.nama}" Berwarna "${this.warna}" / Tahun`
+    }
+    getPearGrow() {
+        super.pearGrow();
+    }
+    getProducePear() {
+        super.producePear();
+    }
+}
