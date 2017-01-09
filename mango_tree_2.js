@@ -28,5 +28,9 @@ class FruitTree extends Fruit {
             this.status = false;
         }
     }
-
+    produceFruit() {
+        if (this.age >= this.first_buah) {
+            this.fruits = Math.ceil(Math.random() * 25);
+        }
+    }
 }
