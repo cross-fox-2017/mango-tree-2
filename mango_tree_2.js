@@ -19,5 +19,14 @@ class FruitTree extends Fruit {
         this.first_buah = Math.ceil((Math.random() * 4) + 2);
     }
 
+    grow() {
+        this.age++
+            if (this.age <= this.max_umur) {
+                this.height += Math.random() * 1;
+            } else
+        if (this.age == 10) {
+            this.status = false;
+        }
+    }
 
 }
