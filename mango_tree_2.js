@@ -86,3 +86,18 @@ class Apple extends AppleTree {
         super.produceApple();
     }
 }
+
+class Mango extends MangoTree {
+    constructor(params) {
+        super(params)
+    }
+    getMango() {
+        return `Hasil Buah "${this.nama}" Berwarna "${this.warna}" / Tahun`
+    }
+    getMangoGrow() {
+        super.mangoGrow();
+    }
+    getProduceMango() {
+        super.produceMango();
+    }
+}
