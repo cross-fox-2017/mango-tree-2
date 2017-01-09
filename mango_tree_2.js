@@ -7,3 +7,17 @@ class Fruit {
             // this.acak1 = Math.ceil(Math.random()*1)
     }
 }
+
+class FruitTree extends Fruit {
+    constructor(params) {
+        super(params)
+        this.height = 0;
+        this.fruits = 0;
+        this.status = true;
+        this.age = 0;
+        this.max_umur = Math.ceil((Math.random() * 5) + 3);
+        this.first_buah = Math.ceil((Math.random() * 4) + 2);
+    }
+
+
+}
