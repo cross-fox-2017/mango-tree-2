@@ -272,9 +272,10 @@ class TreeGrove {
     return this
   }
   nextYear() {
-    mangoTree.grow();
-    peerTree.grow();
-    bananaTree.grow();
+    for(let i = 0; i < this.tree.length; i++){
+      this.tree[i].age += 1
+    }
+    return this
   }
   dead_trees() {
     console.log(`Pohon yang mati :`);
@@ -290,8 +291,8 @@ class TreeGrove {
 var grove = new TreeGrove()
 // input your trees data !
 grove.inputTree("MangoTree", 2, 1.8, 7,true)
-grove.inputTree("MangoTree", 3, 2.4, 12,true)
-grove.inputTree("BananaTree", 4, 1.2, 5,true)
+grove.inputTree("MangoTree", 1, 2.4, 12,true)
+grove.inputTree("BananaTree", 1, 1.2, 5,true)
 grove.inputTree("PearTree", 2, 2, 15,true)
 
 
