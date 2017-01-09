@@ -152,3 +152,14 @@ do {
 console.log(`Pohon Berhenti Tumbuh Saat Berumur : ${mgo.max_umur}`);
 console.log(`Pohon Pertama Berbuah Saat Berumur : ${mgo.first_buah}`);
 console.log(`The tree has met its end. :sad:\n`);
+
+var pr = new Pear(detailpear)
+console.log(`The tree is alive! :smile:`)
+do {
+    pr.getPearGrow();
+    pr.getProducePear();
+    console.log(`[Umur Pohon Tahun Ke-${pr.age} Report] Tinggi = ${pr.height.toFixed(2)} Meter || ${pr.getPear()} = ${pr.fruits}`);
+} while (pr.status != false)
+console.log(`Pohon Berhenti Tumbuh Saat Berumur : ${pr.max_umur}`);
+console.log(`Pohon Pertama Berbuah Saat Berumur : ${pr.first_buah}`);
+console.log(`The tree has met its end. :sad:\n`);
