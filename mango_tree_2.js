@@ -38,19 +38,19 @@ class FruitTree {
   constructor(umur, height, jmlbuah, healthy){
     this.umur = umur || 0;
     this.pohon = "Pohon Buah"
-    this.maxUmur = 100;
-    this.umurDewasa = 20;
+    this.maxUmur = 15;
+    this.umurDewasa = 10;
     this.maxProduce = 20;
     this.healthy = healthy || true;
     this.height = height || 0;
     this.heightModifier = 10;
     this.maxHeight = 50;
     this.buah = [];
-    this.jmlbuah = jmlbuah || 0;
+    this.jmlbuah = jmlbuah;
     this.fruit = new Fruit()
   }
   grow(){
-    if (this.maxUmur >= this.umur){
+    if (this.maxUmur > this.umur){
       this.umur++
       if (this.maxHeight >= this.height){
         this.height += Math.floor(Math.random()*this.heightModifier)
@@ -65,8 +65,8 @@ class FruitTree {
       for (let i = 0; i < Math.floor(Math.random()*this.maxProduce); i++){
         this.buah.push(this.fruit)
       }
-      this.jmlbuah = this.buah.length
     }
+    this.jmlbuah = this.buah.length
   }
 }
 
@@ -81,6 +81,8 @@ class Fruit {
 class MangoTree extends FruitTree{
   constructor(umur, height, maxUmur, umurDewasa, maxProduce, healthy, heightModifier, maxHeight, buah){
     super(umur, height, maxUmur, umurDewasa, maxProduce, healthy, heightModifier, maxHeight, buah)
+    this.fruit = new Mango()
+    this.pohon = "Pohon Mangga"
   }
   grow(){
     super.grow()
@@ -93,6 +95,8 @@ class MangoTree extends FruitTree{
 class AppleTree extends FruitTree{
   constructor(umur, height, maxUmur, umurDewasa, maxProduce, healthy, heightModifier, maxHeight, buah){
     super(umur, height, maxUmur, umurDewasa, maxProduce, healthy, heightModifier, maxHeight, buah)
+    this.fruit = new Apple()
+    this.pohon = "Pohon Apel"
   }
   grow(){
     super.grow()
@@ -105,6 +109,8 @@ class AppleTree extends FruitTree{
 class PearTree extends FruitTree{
   constructor(umur, height, maxUmur, umurDewasa, maxProduce, healthy, heightModifier, maxHeight, buah){
     super(umur, height, maxUmur, umurDewasa, maxProduce, healthy, heightModifier, maxHeight, buah)
+    this.fruit = new Pear()
+    this.pohon = "Pohon Pir"
   }
   grow(){
     super.grow()
@@ -114,8 +120,22 @@ class PearTree extends FruitTree{
   }
 }
 
-// var buah = new FruitTree(5, 7)
-// console.log(buah.fruit);
+class Mango extends Fruit{
+  constructor(quality){
+    super(quality)
+  }
+}
+class Apple extends Fruit{
+  constructor(quality){
+    super(quality)
+  }
+}
+class Pear extends Fruit{
+  constructor(quality){
+    super(quality)
+  }
+}
+
 // Release 2
 class TreeGrove {
   constructor(){
@@ -150,7 +170,7 @@ class TreeGrove {
   }
   matureTrees(){
     this.treeColection.forEach(function(val){
-      if (val.jmlbuah > 0){
+      if (val.jmlbuah > 0 && val.healthy){
         console.log(`${val.pohon} berbuah ${val.jmlbuah} biji`);
       }
     })
@@ -180,8 +200,16 @@ grove.inputTree("FruitTree", 7, 3, 5, true)
 grove.inputTree("FruitTree", 2, 7, 2, true)
 grove.inputTree("FruitTree", 4, 4, 9, true)
 grove.showAge()
-grove.showTree()
+// grove.showTree()
 grove.matureTrees()
 grove.nextYear()
+grove.nextYear()
+grove.nextYear()
+grove.nextYear()
+grove.nextYear()
+grove.nextYear()
+grove.nextYear()
+grove.showAge()
+grove.matureTrees()
 grove.deadTrees()
 // console.log(grove);
