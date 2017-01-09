@@ -59,3 +59,15 @@ class MangoTree extends FruitTree {
         super.produceFruit();
     }
 }
+
+class PearTree extends FruitTree {
+    constructor(params) {
+        super(params)
+    }
+    pearGrow() {
+        super.grow();
+    }
+    producePear() {
+        super.produceFruit();
+    }
+}
