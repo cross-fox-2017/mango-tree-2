@@ -116,3 +116,16 @@ class Pear extends PearTree {
         super.producePear();
     }
 }
+
+var detailAple = {
+    nama: "Apple",
+    warna: "Red"
+}
+var detailmango = {
+    nama: "Mangga",
+    warna: "Yellow"
+}
+var detailpear = {
+    nama: "Pear",
+    warna: "Hijau"
+}
