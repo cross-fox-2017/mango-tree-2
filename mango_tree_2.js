@@ -15,13 +15,13 @@ class FruitTree extends Fruit {
         this.fruits = 0;
         this.status = true;
         this.age = 0;
-        this.max_umur = Math.ceil((Math.random() * 5) + 3);
+        this.max_tumbuh = Math.ceil((Math.random() * 5) + 3);
         this.first_buah = Math.ceil((Math.random() * 4) + 2);
     }
 
     grow() {
         this.age++
-            if (this.age <= this.max_umur) {
+            if (this.age <= this.max_tumbuh) {
                 this.height += Math.random() * 1;
             } else
         if (this.age == 10) {
@@ -137,6 +137,18 @@ do {
     apl.getProduceApple();
     console.log(`[Umur Pohon Tahun Ke-${apl.age} Report] Tinggi = ${apl.height.toFixed(2)} Meter || ${apl.getApple()} = ${apl.fruits}`);
 } while (apl.status != false)
-console.log(`Pohon Berhenti Tumbuh Saat Berumur : ${apl.max_umur}`);
+console.log(`Pohon Berhenti Tumbuh Saat Berumur : ${apl.max_tumbuh}`);
 console.log(`Pohon Pertama Berbuah Saat Berumur : ${apl.first_buah}`);
+console.log(`The tree has met its end. :sad:\n`);
+
+
+var mgo = new Mango(detailmango)
+console.log(`The tree is alive! :smile:`)
+do {
+    mgo.getMangoGrow();
+    mgo.getProduceMango();
+    console.log(`[Umur Pohon Tahun Ke-${mgo.age} Report] Tinggi = ${mgo.height.toFixed(2)} Meter || ${mgo.getMango()} = ${mgo.fruits}`);
+} while (mgo.status != false)
+console.log(`Pohon Berhenti Tumbuh Saat Berumur : ${mgo.max_umur}`);
+console.log(`Pohon Pertama Berbuah Saat Berumur : ${mgo.first_buah}`);
 console.log(`The tree has met its end. :sad:\n`);
