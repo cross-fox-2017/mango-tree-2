@@ -175,6 +175,7 @@ class TreeGrove {
         this.berbuah = Math.ceil(Math.random() * 2) + 1
         this.namaPohon = [];
         this.umurPohon = [];
+
     }
 
     age() {
@@ -189,29 +190,27 @@ class TreeGrove {
             console.log(`Umur Pohon ${this.inputTanam[i][j-1]} Adalah ${this.inputTanam[i][j]}`)
             this.namaPohon.push(this.inputTanam[i][j - 1])
             this.umurPohon.push(this.inputTanam[i][j])
+            }
         }
-    }
-    trees() {
-        console.log("Daftar Pohon Dalam Tabel");
-        for (var i = 0; i < this.namaPohon.length; i++) {
-            console.log(`${i+1}. Pohon ${this.namaPohon[i]}`)
+        trees() {
+            console.log("Daftar Pohon Dalam Tabel");
+            for (var i = 0; i < this.namaPohon.length; i++) {
+                console.log(`${i+1}. Pohon ${this.namaPohon[i]}`)
+            }
         }
-    }
 
-    mature_trees() {
-        var j = 1;
-        var maksimal = this.maxUmur = this.umurPohon.sort(function(a, b) {
-            return b - a
-        })
-        while (maksimal[0] >= j) {
+        mature_trees() {
+          var j = 1;
+          var maksimal = this.maxUmur = this.umurPohon.sort(function(a,b){return b-a})
+          while(maksimal[0] >= j){
             for (var i = 0; i < this.panjang.length; i++) {
-                if (this.umurPohon[i] == j) {
-                    this.pohonMati.push(this.namaPohon[i])
-                    var hapus = this.pohonBerbuah.indexOf(this.namaPohon[i])
-                    this.pohonBerbuah.splice(hapus, 1);
-                } else if (j == this.berbuah) {
-                    this.pohonBerbuah.push(this.namaPohon[i])
-                }
+              if(this.umurPohon[i] == j){
+                this.pohonMati.push(this.namaPohon[i])
+                var hapus = this.pohonBerbuah.indexOf(this.namaPohon[i])
+                this.pohonBerbuah.splice(hapus, 1);
+              }else if(j == this.berbuah){
+                this.pohonBerbuah.push(this.namaPohon[i])
+              }
             }
             console.log(this.dead_trees())
             if (this.pohonBerbuah.length == 0) {
@@ -220,25 +219,25 @@ class TreeGrove {
                 console.log(`Pohon Berbuah : ${this.pohonBerbuah.toString()}`)
             }
 
-            j++
+             j++
+          }
+        }
+        dead_trees() {
+            if (this.pohonMati.length == 0) {
+                return `Tidak Ada Pohon Mati`
+            } else {
+                return `Pohon Mati : ${this.pohonMati.toString()}`
+            }
         }
     }
-    dead_trees() {
-        if (this.pohonMati.length == 0) {
-            return `Tidak Ada Pohon Mati`
-        } else {
-            return `Pohon Mati : ${this.pohonMati.toString()}`
-        }
-    }
-}
 
-var inputTanam = [
-    ["Apple", 5],
-    ["Mango", 6],
-    ["Pear", 4]
-]
+    var inputTanam = [
+        ["Apple", 5],
+        ["Mango", 6],
+        ["Pear", 4]
+    ]
 
-var tanam = new TreeGrove(inputTanam)
-tanam.age()
-tanam.trees()
-tanam.mature_trees();
+    var tanam = new TreeGrove(inputTanam)
+    tanam.age()
+    tanam.trees()
+    tanam.mature_trees();
