@@ -131,7 +131,7 @@ class TreeGrove {
 
   mature_trees() {
     for (let i = 0; i < this.tree.length; i++) {
-      console.log(`${this.tree[i]["name"]} with qty ${this.tree[i]["fruits"].length}`);
+      console.log(`Pohon yg berbuah: ${this.tree[i]["name"]} with qty ${this.tree[i]["fruits"].length}`);
     }
   }
 
