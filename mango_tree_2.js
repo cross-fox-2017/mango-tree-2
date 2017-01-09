@@ -1,12 +1,9 @@
 "use strict"
 
-// Release 0
-class AppleTree {}
-class Apple {}
-
-// Release 1
-class FruitTree {}
-class Fruit {}
-
-// Release 2
-class TreeGrove {}
+class Fruit {
+    constructor(params) {
+        this.nama = params['nama']
+        this.warna = params['warna']
+            // this.acak1 = Math.ceil(Math.random()*1)
+    }
+}
