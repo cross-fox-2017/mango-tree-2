@@ -81,8 +81,13 @@ class Fruit {
 class MangoTree extends FruitTree{
   constructor(umur, height, maxUmur, umurDewasa, maxProduce, healthy, heightModifier, maxHeight, buah){
     super(umur, height, maxUmur, umurDewasa, maxProduce, healthy, heightModifier, maxHeight, buah)
-    this.fruit = new Mango()
-    this.pohon = "Pohon Mangga"
+    this.fruit = new Mango();
+    this.pohon = "Pohon Mangga";
+    this.maxUmur = 20;
+    this.umurDewasa = 5;
+    this.maxProduce = 30;
+    this.heightModifier = 15;
+    this.maxHeight = 250;
   }
   grow(){
     super.grow()
@@ -95,8 +100,13 @@ class MangoTree extends FruitTree{
 class AppleTree extends FruitTree{
   constructor(umur, height, maxUmur, umurDewasa, maxProduce, healthy, heightModifier, maxHeight, buah){
     super(umur, height, maxUmur, umurDewasa, maxProduce, healthy, heightModifier, maxHeight, buah)
-    this.fruit = new Apple()
-    this.pohon = "Pohon Apel"
+    this.fruit = new Apple();
+    this.pohon = "Pohon Apel";
+    this.maxUmur = 10;
+    this.umurDewasa = 3;
+    this.maxProduce = 15;
+    this.heightModifier = 20;
+    this.maxHeight = 150;
   }
   grow(){
     super.grow()
@@ -109,8 +119,13 @@ class AppleTree extends FruitTree{
 class PearTree extends FruitTree{
   constructor(umur, height, maxUmur, umurDewasa, maxProduce, healthy, heightModifier, maxHeight, buah){
     super(umur, height, maxUmur, umurDewasa, maxProduce, healthy, heightModifier, maxHeight, buah)
-    this.fruit = new Pear()
-    this.pohon = "Pohon Pir"
+    this.fruit = new Pear();
+    this.pohon = "Pohon Pir";
+    this.maxUmur = 25;
+    this.umurDewasa = 7;
+    this.maxProduce = 12;
+    this.heightModifier = 20;
+    this.maxHeight = 135;
   }
   grow(){
     super.grow()
@@ -144,13 +159,13 @@ class TreeGrove {
   inputTree(treeClass, umur, tinggi, jmlbuah, sehat){
     let newTree
     switch (treeClass) {
-      case MangoTree:
+      case 'MangoTree':
       newTree = new MangoTree(umur, tinggi, jmlbuah, sehat)
         break;
-      case AppleTree:
+      case 'AppleTree':
       newTree = new AppleTree(umur, tinggi, jmlbuah, sehat)
         break;
-      case PearTree:
+      case 'PearTree':
       newTree = new PearTree(umur, tinggi, jmlbuah, sehat)
         break;
       default:
@@ -195,13 +210,16 @@ buah.grow();
 // console.log(buah);
 
 var grove = new TreeGrove()
-grove.inputTree("FruitTree", 3, 5, 12, true)
-grove.inputTree("FruitTree", 7, 3, 5, true)
-grove.inputTree("FruitTree", 2, 7, 2, true)
-grove.inputTree("FruitTree", 4, 4, 9, true)
+grove.inputTree("MangoTree", 3, 5, 12, true)
+grove.inputTree("MangoTree", 7, 3, 5, true)
+grove.inputTree("AppleTree", 2, 7, 2, true)
+grove.inputTree("PearTree", 4, 4, 9, true)
 grove.showAge()
 // grove.showTree()
 grove.matureTrees()
+grove.nextYear()
+grove.nextYear()
+grove.nextYear()
 grove.nextYear()
 grove.nextYear()
 grove.nextYear()
